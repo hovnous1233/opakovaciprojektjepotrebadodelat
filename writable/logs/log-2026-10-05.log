@@ -1,0 +1,102 @@
+ERROR - 2026-10-05 11:59:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'c84brostik'@'localhost' (using password: YES) in C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'c84brostik', Object(SensitiveParameterValue), 'c84brostikdata', 3306, '', 0)
+#1 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 124)
+#6 C:\laragon\www\brostik\opakovaciprocyklo\app\Controllers\Rocniky.php(18): CodeIgniter\BaseModel->find(124)
+#7 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+#8 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+#9 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\brostik\opakovaciprocyklo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 124)
+#5 C:\laragon\www\brostik\opakovaciprocyklo\app\Controllers\Rocniky.php(18): CodeIgniter\BaseModel->find(124)
+#6 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+#7 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+#8 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\brostik\opakovaciprocyklo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-10-05 11:59:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cyklo_race`
+WHERE `cyklo_race`.`id` = :race.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 124)
+ 5 APPPATH\Controllers\Rocniky.php(18): CodeIgniter\BaseModel->find(124)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-10-05 12:01:29 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'c84brostik'@'localhost' (using password: YES) in C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'c84brostik', Object(SensitiveParameterValue), 'c84brostikdata', 3306, '', 0)
+#1 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 124)
+#6 C:\laragon\www\brostik\opakovaciprocyklo\app\Controllers\Rocniky.php(18): CodeIgniter\BaseModel->find(124)
+#7 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+#8 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+#9 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\brostik\opakovaciprocyklo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 124)
+#5 C:\laragon\www\brostik\opakovaciprocyklo\app\Controllers\Rocniky.php(18): CodeIgniter\BaseModel->find(124)
+#6 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+#7 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+#8 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\brostik\opakovaciprocyklo\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\brostik\opakovaciprocyklo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-10-05 12:01:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cyklo_race`
+WHERE `cyklo_race`.`id` = :race.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 124)
+ 5 APPPATH\Controllers\Rocniky.php(18): CodeIgniter\BaseModel->find(124)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-10-05 12:02:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-05 12:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-05 12:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-05 12:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,148 @@
+ERROR - 2026-10-04 18:17:34 --> mysqli_sql_exception: Unknown column 's.deleted_at' in 'where clause' in C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `s`.*, `...', 0)
+#1 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.*, `...')
+#2 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.*, `...')
+#3 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.*, `...', Array, false)
+#4 C:\laragon\www\brostik\projekt-cyklo\app\Models\Stage.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\brostik\projekt-cyklo\app\Controllers\Rocniky.php(30): App\Models\Stage->getForRaceYears(Array)
+#6 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+#7 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+#8 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\brostik\projekt-cyklo\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\brostik\projekt-cyklo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-10-04 18:17:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.deleted_at' in 'where clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.*, `pt`.`name` AS `stage_type`
+FROM `cyklo_stage` AS `s`
+LEFT JOIN `cyklo_parcour_type` AS `pt` ON `pt`.`id` = `s`.`parcour_type`
+WHERE `s`.`id_race_year` IN :s.id_race_year:
+AND `s`.`deleted_at` IS NULL
+ORDER BY `s`.`number` ASC, `s`.`date` ASC', [...], false)
+ 2 APPPATH\Models\Stage.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Rocniky.php(30): App\Models\Stage->getForRaceYears([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-04 18:17:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.deleted_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.*, `pt`.`name` AS `stage_type`
+FROM `cyklo_stage` AS `s`
+LEFT JOIN `cyklo_parcour_type` AS `pt` ON `pt`.`id` = `s`.`parcour_type`
+WHERE `s`.`id_race_year` IN (950,951,952,953,954,955,956,957,958,959)
+AND `s`.`deleted_at` IS NULL
+ORDER BY `s`.`number` ASC, `s`.`date` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.*, `pt`.`name` AS `stage_type`
+FROM `cyklo_stage` AS `s`
+LEFT JOIN `cyklo_parcour_type` AS `pt` ON `pt`.`id` = `s`.`parcour_type`
+WHERE `s`.`id_race_year` IN (950,951,952,953,954,955,956,957,958,959)
+AND `s`.`deleted_at` IS NULL
+ORDER BY `s`.`number` ASC, `s`.`date` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.*, `pt`.`name` AS `stage_type`
+FROM `cyklo_stage` AS `s`
+LEFT JOIN `cyklo_parcour_type` AS `pt` ON `pt`.`id` = `s`.`parcour_type`
+WHERE `s`.`id_race_year` IN :s.id_race_year:
+AND `s`.`deleted_at` IS NULL
+ORDER BY `s`.`number` ASC, `s`.`date` ASC', [...], false)
+ 4 APPPATH\Models\Stage.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Rocniky.php(30): App\Models\Stage->getForRaceYears([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-04 18:17:34 --> [Caused by] mysqli_sql_exception: Unknown column 's.deleted_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `s`.*, `pt`.`name` AS `stage_type`
+FROM `cyklo_stage` AS `s`
+LEFT JOIN `cyklo_parcour_type` AS `pt` ON `pt`.`id` = `s`.`parcour_type`
+WHERE `s`.`id_race_year` IN (950,951,952,953,954,955,956,957,958,959)
+AND `s`.`deleted_at` IS NULL
+ORDER BY `s`.`number` ASC, `s`.`date` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.*, `pt`.`name` AS `stage_type`
+FROM `cyklo_stage` AS `s`
+LEFT JOIN `cyklo_parcour_type` AS `pt` ON `pt`.`id` = `s`.`parcour_type`
+WHERE `s`.`id_race_year` IN (950,951,952,953,954,955,956,957,958,959)
+AND `s`.`deleted_at` IS NULL
+ORDER BY `s`.`number` ASC, `s`.`date` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.*, `pt`.`name` AS `stage_type`
+FROM `cyklo_stage` AS `s`
+LEFT JOIN `cyklo_parcour_type` AS `pt` ON `pt`.`id` = `s`.`parcour_type`
+WHERE `s`.`id_race_year` IN (950,951,952,953,954,955,956,957,958,959)
+AND `s`.`deleted_at` IS NULL
+ORDER BY `s`.`number` ASC, `s`.`date` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.*, `pt`.`name` AS `stage_type`
+FROM `cyklo_stage` AS `s`
+LEFT JOIN `cyklo_parcour_type` AS `pt` ON `pt`.`id` = `s`.`parcour_type`
+WHERE `s`.`id_race_year` IN :s.id_race_year:
+AND `s`.`deleted_at` IS NULL
+ORDER BY `s`.`number` ASC, `s`.`date` ASC', [...], false)
+ 5 APPPATH\Models\Stage.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Rocniky.php(30): App\Models\Stage->getForRaceYears([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Rocniky->index(124)
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rocniky))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-10-04 18:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-04 18:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-04 18:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-04 18:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-04 18:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-04 18:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-10-04 18:49:27 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' in /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/BaseModel.php(611): CodeIgniter\Model->doFind()
+#6 /var/www/clients/client84/web220/web/app/Controllers/Rocniky.php(18): CodeIgniter\BaseModel->find()
+#7 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rocniky->index()
+#8 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/clients/client84/web220/web/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/BaseModel.php(611): CodeIgniter\Model->doFind()
+#5 /var/www/clients/client84/web220/web/app/Controllers/Rocniky.php(18): CodeIgniter\BaseModel->find()
+#6 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rocniky->index()
+#7 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 /var/www/clients/client84/web220/web/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /var/www/clients/client84/web220/web/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2026-10-04 18:49:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(611): CodeIgniter\Model->doFind()
+ 5 APPPATH/Controllers/Rocniky.php(18): CodeIgniter\BaseModel->find()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rocniky->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-10-04 19:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
